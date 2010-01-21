@@ -1,0 +1,54 @@
+# /etc/conf.d/backup
+
+# Remote host
+#   Make sure you can login to that host without a password.
+#   Can use ssh host aliases defined in .ssh/config here
+REMOTE=me@my.backup.provider.com
+
+# file list
+RULES=/etc/backup/rsync-rules
+
+# Credentials that can backup the databases
+DB_USER="user"
+DB_PASS="secret"
+DB_HOST="localhost"
+
+# Options to use for rsync
+# (also see http://www.sanitarium.net/golug/rsync_backups.html)
+RSYNCOPTS="--verbose --archive --hard-links --progress"
+RSYNCOPTS+=" --delete --delete-excluded --numeric-ids --compress"
+RSYNCOPTS+=" --chmod=u+rwx"
+
+# I don't mind backup to take longer, I just don't want them to hog the line
+# This value is in KBytes per second.
+RSYNCOPTS+=" --bwlimit=25"
+
+# location of db backup file
+DB_BACKUP="${HOME}/backup/${HOSTNAME}-databases.sql"
+
+# Source directory to backup
+SRC="/"
+
+# destination directory to backup to. 
+# using the local hostname allows me to backup several host to the same backup location
+DST=${HOSTNAME}
+
+# Binaries
+# (uncomment ECHO to achieve a "dry run" effect)
+#ECHO="/bin/echo"
+MYSQLDUMP="${ECHO} /usr/bin/mysqldump"
+BZIP2="${ECHO} /bin/bzip2"
+SSH="${ECHO} /usr/bin/ssh"
+RSYNC="${ECHO} /usr/bin/rsync"
+CSTREAM="${ECHO} /usr/local/bin/cstream"
+
+REMOTE_RM="${SSH} ${REMOTE} rm"
+REMOTE_MV="${SSH} ${REMOTE} mv"
+REMOTE_CP="${SSH} ${REMOTE} cp"
+REMOTE_TOUCH="${SSH} ${REMOTE} touch"
+REMOTE_QUOTA="${SSH} ${REMOTE} quota"
+REMOTE_DU="${SSH} ${REMOTE} du"
+
+PIDFILE="/var/run/backup.pid"
+
+BINDIR=$(dirname $0)

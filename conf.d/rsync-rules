@@ -1,0 +1,83 @@
+# This is the rules file for backup. 
+# For details on the format of this file, consult rsync(1) man page
+
+# exclude directories we never want to backup - they just take up space
+- .googleearth/
+- .azureus/
+- .ies4linux/
+- .java/
+- [tT]humbs.db
+- *[cC]ache*/
+- .thumbnails/
+- .adobe/
+- Program Files/
+- drive_c/windows/
+- .macromedia/
+- .icons/
+- [mM]ail/Junk/
+- .opera/images/
+- .opera/vps/
+- .picasa/
+- .beagle/
+- .xsession-errors*
+- .aMule/
+- dvdrip-data/
+- core
+- *eclipse/
+- urlclass*sqlite
+- .sheep/
+- [tT]rash/
+- share/apps/ktorrent/
+- share/apps/akregator/
+- **winograd
+- **docs/books/rails
+- *.tmp
+- *.index
+- *.index.ids
+- .VirtualBox/
+
+# Some stuff we don't want to backup
+- /home/guest/
+- /home/yuval/software
+- download/
+- /home/yuval/sites/
+- /home/yuval/public_html/
+
+# cachedimap accounts from kmail
+- kmail/dimap
+
+# any directory named 'tmp' is not backed up
+- tmp/
+
+# crossover
+- .cxchromium/
+- .cxoffice/
+
+# tag files
+- TAGS
+- tags
+
+# What we want to backup is listed here.
+# note that a directory needs its parents and the '**' notation for a full backup
++ /home/
++ /home/yuval/
++ /home/yuval/**
++ /home/naama/
++ /home/naama/**
++ /usr/
++ /usr/local/
++ /usr/local/pictures/
++ /usr/local/pictures/**
++ /usr/local/backup/
++ /usr/local/backup/**
++ /var/
+
+# mysql databases reside here
++ /var/backups/
++ /var/backups/**
+
++ /etc/
++ /etc/**
+- detailed_usage_summary
++ /root/**
+- *

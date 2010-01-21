@@ -1,0 +1,5 @@
+# backups
+0 0,12 * * * /usr/local/backup/snapshot.sh
+0 5 * * * /usr/local/backup/rotate_snapshot_daily.sh
+0 6 * * fri /usr/local/backup/rotate_snapshot_weekly.sh
+0 7 1 * * /usr/local/backup/rotate_snapshot_monthly.sh
