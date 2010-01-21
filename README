@@ -24,6 +24,12 @@ yhager's rsync based backup scripts
   [2] http://www.rsync.net/resources/howto/rsync_snapshots.html
 
 Installation:
+  
+  # most of the steps require root privilege
+  su 
+
+  # copy this entire directory onto /usr/local/backup
+  cp -a . /usr/local/backup  
 
   # edit the file conf.d/backup to match your settings
   vi conf.d/backup
