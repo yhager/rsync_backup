@@ -30,6 +30,7 @@ Installation:
 
   # copy this entire directory onto /usr/local/backup
   cp -a . /usr/local/backup  
+  cd /usr/local/backup 
 
   # edit the file conf.d/backup to match your settings
   vi conf.d/backup
@@ -46,8 +47,9 @@ Installation:
 
   # create a directory for mysql backups
   mkdir -p /var/backups/mysql
-  # install the crontab, preferably as root
-  crontab < crontab
+
+  # Add the crontab to your existing crontab
+  crontab -l > /tmp/crontab && cat /tmp/crontab crontab | crontab - && rm /tmp/crontab
 
 Encryption:
 
