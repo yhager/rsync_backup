@@ -4,6 +4,9 @@
 
 . $BINDIR/backup_lock.sh
 
+# make sure the destination directory exists
+${REMOTE_MKDIR} -p ${DST}
+
 #LINKDEST="--link-dest ../hourly.1"
 TIMES=3
 

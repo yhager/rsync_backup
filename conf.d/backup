@@ -43,6 +43,7 @@ RSYNC="${ECHO} /usr/bin/rsync"
 CSTREAM="${ECHO} /usr/local/bin/cstream"
 
 REMOTE_RM="${SSH} ${REMOTE} rm"
+REMOTE_MKDIR="${SSH} ${REMOTE} mkdir"
 REMOTE_MV="${SSH} ${REMOTE} mv"
 REMOTE_CP="${SSH} ${REMOTE} cp"
 REMOTE_TOUCH="${SSH} ${REMOTE} touch"
