@@ -17,7 +17,7 @@ yhager's rsync based backup scripts
   * use crontab to control backup initiation
   * simple, simple, simple
 
-  The script more or less implement the method outlined by rsync.net's
+  The script more or less implements the method outlined by rsync.net's
   support team[2]  
 
   [1] http://www.mikerubel.org/computers/rsync_snapshots/
@@ -36,6 +36,7 @@ Installation:
   vi conf.d/backup
 
   # copy the file to /etc/conf.d
+  mkdir /etc/conf.d
   cp conf.d/backup /etc/conf.d/
 
   # edit the rules file to match your setup
@@ -50,6 +51,8 @@ Installation:
 
   # Add the crontab to your existing crontab
   crontab -l > /tmp/crontab && cat /tmp/crontab crontab | crontab - && rm /tmp/crontab
+  # or if your crontab is currently empty, simply
+  crontab crontab
 
 Encryption:
 

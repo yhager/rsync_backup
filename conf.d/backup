@@ -19,7 +19,7 @@ RSYNCOPTS="--verbose --archive --hard-links --progress"
 RSYNCOPTS+=" --delete --delete-excluded --numeric-ids --compress"
 RSYNCOPTS+=" --chmod=u+rwx"
 
-# I don't mind backup to take longer, I just don't want them to hog the line
+# I don't mind backups taking longer, I just don't want them to hog the line
 # This value is in KBytes per second.
 RSYNCOPTS+=" --bwlimit=25"
 
