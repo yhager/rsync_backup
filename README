@@ -61,6 +61,10 @@ Encryption:
   printed and kept at a friend's house? - I was never able to solve
   that question), so I decided that encryption might give me more
   headache than benefit.
+  
+  Edit: The above paragraph made sense at the time I wrote it; I now
+  strongly recommend that you incorporate some encryption routine into
+  your backups, especially when using any external provider.
 
 Other options:
 
