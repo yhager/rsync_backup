@@ -14,7 +14,7 @@ DB_PASS="secret"
 DB_HOST="localhost"
 
 # Options to use for rsync
-# (also see http://www.sanitarium.net/golug/rsync_backups.html)
+# (also see http://www.sanitarium.net/golug/rsync_backups_2010.html)
 RSYNCOPTS="--verbose --archive --hard-links --progress"
 RSYNCOPTS+=" --delete --delete-excluded --numeric-ids --compress"
 RSYNCOPTS+=" --chmod=u+rwx"
